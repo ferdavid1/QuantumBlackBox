@@ -72,7 +72,7 @@ def draw_qubit():
             serialArduino.write(b'a') # send arduino a serial pulse
 
         try:
-            valueRead = serialArduino.readline(500) #500
+            valueRead = serialArduino.readline(50) #500
             valueInInt = float(valueRead)
             print(valueInInt)
             write("Probability: \n")
@@ -87,7 +87,7 @@ def draw_qubit():
                 delay(1000)
             else:
                 decision = emulate_quantum_choice(valueInInt)
-                print(decision)
+                # print(decision)
                 write(decision)
                 undo()
                 delay(1000)
